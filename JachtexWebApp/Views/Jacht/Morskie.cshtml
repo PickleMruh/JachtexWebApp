@@ -1,0 +1,42 @@
+﻿@model IEnumerable<JachtexWebApp.Models.Jachty>
+
+<h1 class="text-primary">Jachty Morskie</h1>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Pełna lista jachtów morskich</h2>
+            <a class="btn btn-primary" asp-controller="Jacht" asp-action="Wypozycz">Wypożycz</a>
+        </div>
+    </div>
+    <br />
+
+    @if (Model.Count() > 0) 
+     {       
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID Jachtu</th>
+                    <th>Nazwa</th>
+                    <th>Koszt</th>
+                    <th>Opis</th>
+                </tr>
+            </thead>
+                <tbody>
+                   @foreach (var Jachty in Model)
+                    {
+                    <tr>
+                        <td width="20%">@Jachty.IdJacht</td>
+                        <td width="30%">@Jachty.Nazwa</td>
+                        <td width="10%">@Jachty.DziennyKoszt</td>
+                        <td width="30%">@Jachty.Opis</td>
+                    </tr>
+                    }
+                </tbody>
+        </table>
+     }
+     else
+     {
+        <p>Brak jachtów w bazie</p>
+     }
+</div>

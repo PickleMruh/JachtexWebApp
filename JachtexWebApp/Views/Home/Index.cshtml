@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Jachty";
+}
+
+<div class="container">
+    <h1 class="text-primary text-center p-3">Wypożyczalnia jachtów JACHTEX</h1>
+    <div class="row">
+        <div class="col"> <img src="~/img/jacht2.jpg" /> </div>
+        <div class="col"> <img src="~/img/jacht1.jpg" /> </div>
+    </div>
+    <div class="row justify-content-around p-3">
+        <div class="col-2"> <a class="btn btn-primary" asp-controller="Jacht" asp-action="Srodladowe">Jachty Śródlądowe</a> </div>
+        <div class="col-2"> <a class="btn btn-primary" asp-controller="Jacht" asp-action="Morskie">Jachty Morskie</a> </div>
+    </div>
+</div>
